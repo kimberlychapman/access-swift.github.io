@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<title>Access Swift</title>
+<html>
+
+<head>
+	<script type="text/javascript" src="index.js">
+    </script>
+    
+	<link rel="stylesheet" href="style.css">
+</head>
+    <audio id="run" src="audio/run-code.m4a" type="audio/m4a"></audio>
+    <audio id="swipe-right" src="audio/swipe-right.m4a" type="audio/m4a"></audio>
+    <audio id="swipe-up" src="audio/swipe-up.m4a" type="audio/m4a"></audio>
+    <audio id="help" src="audio/help.m4a" type="audio/m4a"></audio>
+<!-- <body id="background" style="background-image: url('../bugs4/images/forest.jpeg"></body> -->
+  <body class="container">
+   <!-- <header>Header</header> -->
+   <nav>
+       <div><button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Double Tap to Run Your Code</button></div>
+       <div id="block" onclick="document.getElementById('swipe-right').play()" ondblclick="document.getElementById('swipe-right').pause()"></div>
+       <div id="block"></div>
+       <div id="block"></div>
+       <div id="block"></div>
+       <div id="block"></div>
+       <div id="block"></div>
+       <div id="block"></div>
+       <div id="block"></div>
+       <div id="block"></div>
+   </nav>
+   <main>
+        <div class="help"><img id="siri" src="images/siri.png" onclick="document.getElementById('help').play()" ondblclick="document.getElementById('help').pause()"></div>   
+   </main>
+     <!-- <aside>Related links</aside> -->
+     <footer>
+         <div class="commands">
+            <div id="command" onclick="document.getElementById('swipe-up').play()" ondblclick="document.getElementById('swipe-up').pause()" ondblclick="document.getElementById('swipe-right').pause()">moveForward()</div>
+            <div id="command">turnLeft()</div>
+            <div id="command">turnRight()</div>
+            <div id="command">collectGem()</div>
+            <div id="command">toggleSwitch()</div>
+         </div>
+     </footer>
+  </body>
+</html>
