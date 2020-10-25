@@ -11,34 +11,51 @@
     <audio id="run" src="audio/run-code.m4a" type="audio/m4a"></audio>
     <audio id="swipe-right" src="audio/swipe-right.m4a" type="audio/m4a"></audio>
     <audio id="swipe-up" src="audio/swipe-up.m4a" type="audio/m4a"></audio>
-    <audio id="help" src="audio/help.m4a" type="audio/m4a"></audio>
-<!-- <body id="background" style="background-image: url('../bugs4/images/forest.jpeg"></body> -->
-  <body class="container">
-   <!-- <header>Header</header> -->
-   <nav>
-       <div><button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Double Tap to Run Your Code</button></div>
-       <div id="block" onclick="document.getElementById('swipe-right').play()" ondblclick="document.getElementById('swipe-right').pause()"></div>
-       <div id="block"></div>
-       <div id="block"></div>
-       <div id="block"></div>
-       <div id="block"></div>
-       <div id="block"></div>
-       <div id="block"></div>
-       <div id="block"></div>
-       <div id="block"></div>
-   </nav>
-   <main>
-        <div class="help"><img id="siri" src="images/siri.png" onclick="document.getElementById('help').play()" ondblclick="document.getElementById('help').pause()"></div>   
-   </main>
-     <!-- <aside>Related links</aside> -->
-     <footer>
-         <div class="commands">
-            <div id="command" onclick="document.getElementById('swipe-up').play()" ondblclick="document.getElementById('swipe-up').pause()" ondblclick="document.getElementById('swipe-right').pause()">moveForward()</div>
-            <div id="command">turnLeft()</div>
-            <div id="command">turnRight()</div>
-            <div id="command">collectGem()</div>
-            <div id="command">toggleSwitch()</div>
-         </div>
-     </footer>
-  </body>
+    <audio id="help" src="audio/code-bot.m4a" type="audio/m4a"></audio>
+    <div class="grid-container">
+        <div class="Nav">
+            <!-- <div class="run"><button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Double Tap to Run Your Code</button></div> -->
+        
+        <div class="blocks">
+            <div class="help">
+                <img id="speaker" src="images/speaker.png" onclick="document.getElementById('help').play()" ondblclick="document.getElementById('help').pause()">
+                <img id="siri" src="images/siri.png"><span id="action">Users can control actions by swiping or by using voice commands: "Hey Codebot!" (Codebot=Siri).</span>
+            </div>
+            <div id="block" onclick="document.getElementById('swipe-right').play()" ondblclick="document.getElementById('swipe-right').pause()"></div>                
+            <div id="block"></div>
+            <div id="block"></div>
+            <div id="block"></div>
+            <div id="block"></div>
+        </div>
+        </div>
+        <div class="Main">
+        </div>
+            
+        <div class="Header">
+    
+            <div class="blocks">
+                <div id="run-code">
+                    <button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Run Code!</button><span class="siri">
+                </div>
+                <!-- <div id="block">
+                    <div class="run"><button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Double Tap to Run Your Code</button></div>
+                </div> -->
+                <div id="block" onclick="document.getElementById('swipe-right').play()" ondblclick="document.getElementById('swipe-right').pause()"></div>                
+                <div id="block"></div>
+                <div id="block"></div>
+                <div id="block"></div>
+                <div id="block"></div>
+                <!-- <div id="block"></div> -->
+                <!-- <div id="block"></div>
+                <div id="block"></div> -->
+            </div>
+            <!-- <div class="commands">
+                <div id="command1"><img id="forward" src="images/moveForward.png" onclick="document.getElementById('swipe-up').play()" ondblclick="document.getElementById('swipe-up').pause()" ondblclick="document.getElementById('swipe-right').pause()"></div>
+                <div id="command2">turnLeft()</div>
+                <div id="command3">turnRight()</div>
+                <div id="command4">collectGem()</div>
+                <div id="command5">toggleSwitch()</div>
+             </div> -->
+        </div>
+      </div>    
 </html>

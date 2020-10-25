@@ -1,100 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@font-face {
-    font-family: 'Dimbo Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Dimbo Regular'), url('Dimbo Regular.woff') format('woff');
-    }
-    body {
-        font-family: arial;
-      }
-      
-      .container {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-      
-      
-      @media (min-width: 768px) {
-        .container {
-          display: grid;
-          grid-template-columns: 300px 1fr;
-          grid-template-rows: 1fr auto;
-      
-        }
-      }
-      
-      /* header {
-        grid-column: span 3;
-        padding: 30px;
-        text-align: center;
-        font-size: 1.4em;
-        background-color: #369;
-        color: white;
-      } */
-      
-      main {
-        flex: 1;
-        padding: 20px;
-        background-image: url("images/sky.jpg");
-      }
-    .help{
-        position: fixed;
-        top:5px;
-        right:5px;
-    }
-      nav {
-        background-color: white;
-        padding: 20px;
-      }
-    #block{
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        height:50px;
-        width:150px;
-        border: 2px solid black;
-        padding:10px;
-        margin:10px;
-    }
+html, body, .grid-container { height: 100%; margin: 0; }
 
-    .commands{
-        display:flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: -10px;
-    }
-    #command{
-        height:40px;
-        width:150px;
-        align-items: center;
-        text-align: center;
-        color: white;
-        border: 2px solid white;
-        margin-left: 20px;
-        margin-right:20px;
-        margin-bottom:40px;
-        padding:5px;
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  /* grid-template-rows: 1fr 1.4fr 0.4fr; */
+  gap: 0px 0px;
+  grid-template-areas:
+    "Nav Main Header";
+}
 
-    }
-      aside {
-        padding: 20px;
-        background-color:white;
-      }
-      
-      footer {
-        grid-column: span 3;
-        padding: 30px;
-        text-align: center;
-        font-size: 1.4em;
-        background-color: black;
-        color: white;
-      }
-      
-      h1 {
-        margin-bottom: 1em;
-        font-size: 1.3em;
-        font-weight: bold;
-      }
+.Nav { grid-area: Nav; 
+  border: 1px solid  black;}
+
+.help{
+  display: flex;
+  flex-direction: row;
+  float:left;
+}
+#siri{
+  height:70px;
+  width: 70px;
+  display:flex;
+  float:left;
+  justify-items: left;
+  /* justify-content: center;
+  align-self: center; */
+}
+#speaker{
+  height:40px;
+  width:40px;
+  position: fixed;
+  top:5px;
+  left:5px;
+}
+#action{
+  display:none;
+}
+
+#siri:hover ~ #action{
+  display:block;
+
+
+}
+.blocks{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  /* margin-top:60px; */
+}
+#block{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  height: 110px;
+  width:150px;
+  border: 2px solid black;
+  padding:10px;
+  margin:10px;
+}
+
+.Header { grid-area: Header; 
+  border: 1px solid  black;}
+
+#run{
+  float: right;
+  height:50px;
+  margin-right:5px;
+  margin-top:5px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  padding:7px;
+  /* display:flex;
+  justify-content: center;
+  justify-items: center; */
+}
+
+.Main { 
+  grid-area: Main; 
+  border: 1px solid  black;
+  background-image: url("images/sky.jpg");
+}
+/* #run{
+  justify-items: center;
+}  */
+/* #siri{
+  float: right;
+} */
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  /* border: 1px solid  black; */
+  position: relative;
+}
+
+.grid-container *:after {
+  /* content:attr(class); */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Show the sidenav */
+  .grid-container {
+    grid-template-columns: 1fr; /* Show the side nav for non-mobile screens */
+    grid-template-rows: 260px 1fr 200px;
+    grid-template-areas:
+      "Header"
+      "Main"
+      "Nav"
+      ;
+  };
+}
+
+@media only screen and (max-width: 768px) {
+  /* Show the sidenav */
+  .blocks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    margin-top: 10px;
+  }
+  #block{
+    justify-content: center;
+    width:80px;
+    height:60px;
+    margin-top:0px;
+  }
+
+}
