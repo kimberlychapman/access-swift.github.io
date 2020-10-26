@@ -390,7 +390,7 @@ canvas.shake {
 
 @media only screen and (max-width: 768px) {
   /* Show the sidenav */
-  .blocks{
+  .code-blocks{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -406,6 +406,75 @@ canvas.shake {
   }
 
 }
+@media only screen and (max-width: 768px) {
+  /* Show the sidenav */
+  .blocks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    margin-top: 10px;
+  }
+  #block1{
+    justify-content: center;
+    width:80px;
+    height:60px;
+    margin-top:0px;
+    font-size:7pt;
+  }
+  #block2{
+    justify-content: center;
+    width:80px;
+    height:60px;
+    margin-top:0px;
+    font-size:7pt;
+  }
+  #block3{
+    justify-content: center;
+    width:80px;
+    height:60px;
+    margin-top:0px;
+    font-size:7pt;
+  }
+  #block4{
+    justify-content: center;
+    width:80px;
+    height:60px;
+    margin-top:0px;
+    font-size:7pt;
+  }
+  #block5{
+    justify-content: center;
+    width:80px;
+    height:60px;
+    margin-top:0px;
+    font-size:7pt;
+  }
+  /* .forward{
+    display:none;
+  } */
+  #move-forward{
+    display:none;
+  }
+  #turn-left{
+    display:none;
+  }
+  #turn-right{
+    display:none;
+  }
+  /* .collect{
+    display:none;
+  } */
+  #collect-gem{
+    display:none;
+  }
+  /* .toggle{
+    display:none;
+  } */
+  #toggle-switch{
+    display:none;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   /* Show the sidenav */
@@ -420,6 +489,11 @@ canvas.shake {
     border:black 1px solid;
   }
   .box2{
+    height:107px;
+    width:107px;
+    border:black 1px solid;
+  }
+  .box4{
     height:107px;
     width:107px;
     border:black 1px solid;
@@ -445,4 +519,26 @@ canvas.shake {
     right:5px;
     bottom:10px;
   } */
+}
+
+@media only screen and (max-width: 768px) {
+  #sketchpadapp{
+    display:none;
+  }
+  .rightside{
+    display:none;
+  }
+  .leftside{
+    display:none;
+  }
+  #sketchpad{
+    display:none;
+  }
+  #clearbutton{
+    display:none;
+  }
+  .box3{
+    height:325px;
+    width:107px;
+  }
 }
