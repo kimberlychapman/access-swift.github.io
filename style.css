@@ -358,6 +358,7 @@ canvas.shake {
   font-family: 'Trispace', sans-serif;
   color: black;
   text-align: center;
+  overflow-y: scroll;
 }
 
 /*-------------------------------------------------------------------------------------------------- */
