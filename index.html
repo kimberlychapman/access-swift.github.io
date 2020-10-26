@@ -3,15 +3,25 @@
 <html>
 
 <head>
-	<script type="text/javascript" src="index.js">
-    </script>
+	<script type="text/javascript" src="index.js"></script>
     
-	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href=”css/ipadP.css” rel=”stylesheet” media=”only screen and (min-device-width:  768px) and (max-device-width: 1024px) and (orientation: portrait)”>
+    <link href=”css/ipadL.css” rel=”stylesheet” media=”only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)”>  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Trispace:wght@500&display=swap');
+    </style>
 </head>
     <audio id="run" src="audio/run-code.m4a" type="audio/m4a"></audio>
     <audio id="swipe-right" src="audio/swipe-right.m4a" type="audio/m4a"></audio>
     <audio id="swipe-up" src="audio/swipe-up.m4a" type="audio/m4a"></audio>
     <audio id="help" src="audio/code-bot.m4a" type="audio/m4a"></audio>
+    <audio id="rock" src="audio/rock.wav" type="audio/wav"></audio>
+    <audio id="wind" src="audio/windhowl.wav" type="audio/wav"></audio>
+    <audio id="gem" src="audio/gem.wav" type="audio/wav"></audio>
+    <audio id="collect" src="audio/collect.wav" type="audio/wav"></audio>
+    <audio id="toggle" src="audio/toggle.wav" type="audio/wav"></audio>
+    <body onload="init()"> 
     <div class="grid-container">
         <div class="Nav">
             <!-- <div class="run"><button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Double Tap to Run Your Code</button></div> -->
@@ -21,44 +31,55 @@
                     <img id="speaker" src="images/speaker.png" onclick="document.getElementById('help').play()" ondblclick="document.getElementById('help').pause()">
                     <img id="siri" src="images/siri.png"><span id="action"><img id="voice" src="images/voice-command.png"><br>By embedding Siri— and training Siri to carry out game actions & to provide player support— the user can control game actions using voice commands (but instead of initiating Siri by saying the phrase "Hey Siri", users will say "Hey Codebot"). <br><br><img id="right" src="images/right.png"><br>The user can also control game actions by swiping.  To add a command to their code, the user swipes that command to the right.  It will make a swooshing noise if the user swipes right correctly.<br><br><img id="left" src="images/left.png"><br>To remove a command from their code, the user swipes that command to the left.  It will make a crumpling noise (the same noise it makes when you move an item on your computer into the trash) if the user swipes left correctly.</span>
                 </div>
-                <div id="block" onclick="document.getElementById('swipe-right').play()" ondblclick="document.getElementById('swipe-right').pause()"></div>                
-                <div id="block"></div>
-                <div id="block"></div>
-                <div id="block"></div>
-                <div id="block"></div>
+                <div id="block1"><div class="forward"><img id="move-forward" src="images/moveForward().png">moveForward()</div></div>               
+                <div id="block2"><img id="turn-left" src="images/turnLeft().png"><br>turnLeft()</div>
+                <div id="block3"><img id="turn-right" src="images/turnRight().png"><br>turnRight()</div>
+                <div id="block4"><div class="collect"><img id="collect-gem" src="images/collect-gem.png">collectGem()</div></div>
+                <div id="block5"><div class="toggle"><img id="toggle-switch" src="images/toggleSwitch().png">toggleSwitch()</div></div>
             </div>
         </div>
         <div class="Main">
             <section class="columns">
                 <div id="column-1">
-                    <div class="box1"></div>
-                    <div class="box1"></div>
-                    <div class="box1"></div>
-                    <div class="box"></div>
+                    <div class="box3">
+                        <div id="sketchpadapp">
+                            <div class="rightside">
+                                <canvas id="sketchpad" height="650" width="225">
+                                </canvas>
+                                <!-- <input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas,ctx);"> -->
+                            </div>
+                            <div class="leftside">
+                                <input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="box1"></div>
+                    <div class="box1"></div> -->
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
                 </div>
                 <div id="column-2">
-                    <div class="box"></div>
-                    <div class="box"></div>
-                    <div class="box1"></div>
-                    <div class="box"></div>
+                    <div class="box2"><img id="rock" src="images/rock.png" onclick="document.getElementById('rock').play()" ondblclick="document.getElementById('rock').pause()"></div>
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
+                    <div class="box4"></div>
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
                 </div>
                 <div id="column-3">
-                    <div class="box"></div>
-                    <div class="box"></div>
-                    <div class="box1"></div>
-                    <div class="box"></div>
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
+                    <div class="box1"><div id="gem"><img id="gem" src="images/collectGem.png" onclick="document.getElementById('collect').play()" ondblclick="document.getElementById('collect').pause()"></div></div>
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
                 </div>
                 <div id="column-4">
-                    <div class="box"></div>
-                    <div class="box"></div>
-                    <div class="box1"></div>
-                    <div class="box"></div>
+                    <div class="box2"><img id="rock" src="images/rock.png" onclick="document.getElementById('rock').play()" ondblclick="document.getElementById('rock').pause()"></div>
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
+                    <div class="box4"></div>
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
                 </div>
                 <div id="column-5">
-                    <div class="box1"></div>
-                    <div class="box1"></div>
-                    <div class="box1"></div>
-                    <div class="box"></div>
+                    <div class="box1"><div id="toggle"><img id="toggle" src="images/toggleSwitch.png" onclick="document.getElementById('toggle').play()" ondblclick="document.getElementById('toggle').pause()"></div></div>
+                    <div class="box4"></div>
+                    <div class="box1"><div id="toggle"><img id="toggle" src="images/toggleSwitch.png" onclick="document.getElementById('toggle').play()" ondblclick="document.getElementById('toggle').pause()"></div></div>
+                    <div class="box" onclick="document.getElementById('wind').play()" ondblclick="document.getElementById('wind').pause()"></div>
                 </div>
             </section>
            
@@ -66,7 +87,7 @@
         </div>
             
         <div class="Header">
-            <div class="blocks">
+            <div class="code-blocks">
                 <div id="run-code">
                     <button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Run Code!</button><span class="siri">
                     <!-- <div class="swift"><img id=#swift src="images/swift.png"></div> -->
@@ -91,5 +112,19 @@
                 <div id="command5">toggleSwitch()</div>
              </div> -->
         </div>
-      </div>    
+      </div>
+    </div>
+    </body>    
 </html>
+
+
+<!-- <div id="sketchpadapp">
+    <div class="rightside">
+        <canvas id="sketchpad" height="110" width="150">
+        </canvas>
+    </div>
+    <div class="leftside">
+        <input type="submit" value="Clear Sketchpad" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
+    </div>
+</div> -->
+
