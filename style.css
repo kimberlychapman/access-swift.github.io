@@ -8,7 +8,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-template-areas:
     "Nav Main Header";
 }
-
+/*-------------------------------------------------------------------------------------------------- */
 .Nav { grid-area: Nav; 
   border: 1px solid  black;}
 
@@ -40,7 +40,6 @@ html, body, .grid-container { height: 100%; margin: 0; }
 #siri:hover ~ #action{
   display:block;
 
-
 }
 .blocks{
   display: flex;
@@ -62,9 +61,20 @@ html, body, .grid-container { height: 100%; margin: 0; }
   margin:10px;
 }
 
+#swipe-right{
+  display:none;
+}
+
+.blocks:hover ~ #swipe-right{
+  display:block;
+}
+/*-------------------------------------------------------------------------------------------------- */
 .Header { grid-area: Header; 
   border: 1px solid  black;}
-
+#run-code{
+  display:flex;
+  flex-direction: row;
+}
 #run{
   float: right;
   height:50px;
@@ -77,18 +87,60 @@ html, body, .grid-container { height: 100%; margin: 0; }
   justify-content: center;
   justify-items: center; */
 }
+.swift{
+  position:fixed;
+  top:0px;
+  right:0px;
+}
 
+/*-------------------------------------------------------------------------------------------------- */
 .Main { 
   grid-area: Main; 
   border: 1px solid  black;
   background-image: url("images/sky.jpg");
 }
-/* #run{
-  justify-items: center;
-}  */
-/* #siri{
-  float: right;
-} */
+#tiles{
+  display:flex;
+  flex-direction: row;
+}
+.columns{
+  display:flex;
+  flex-direction: row;
+}
+#column-1{
+  display:flex;
+  flex-direction:column;
+}
+#column-2{
+  display:flex;
+  flex-direction:column;
+}
+#column-3{
+  display:flex;
+  flex-direction:column;
+}
+#column-4{
+  display:flex;
+  flex-direction:column;
+}
+#column-5{
+  display:flex;
+  flex-direction:column;
+}
+.box{
+  height:225px;
+  width:225px;
+  border:black 2px solid;
+}
+.box1{
+  height:225px;
+  width:225px;
+  border:black 2px solid;
+  background-color: tan;
+}
+
+/*-------------------------------------------------------------------------------------------------- */
+
 
 /* For presentation only, no need to copy the code below */
 .grid-container * {
@@ -130,6 +182,16 @@ html, body, .grid-container { height: 100%; margin: 0; }
     width:80px;
     height:60px;
     margin-top:0px;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  /* Show the sidenav */
+  .box{
+    height:107px;
+    width:107px;
+    border:black 2px solid;
   }
 
 }
