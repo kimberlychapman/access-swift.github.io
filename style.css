@@ -120,13 +120,6 @@ html, body, .grid-container { height: 100%; margin: 0; }
   text-align: center;
   background-color: red;
 }
-
-#move-forward{
-  width:90px;
-}
-#collect-gem{
-  width:90px;
-}
 #block5{
   display:flex;
   flex-direction: column;
@@ -142,7 +135,37 @@ html, body, .grid-container { height: 100%; margin: 0; }
   text-align: center;
   background-color:aqua;
 }
+#move-forward{
+  width:90px;
+}
+#collect-gem{
+  width:90px;
+}
 
+#block1:hover{
+  -webkit-transform:scale(1.3);
+transform:scale(1.3);
+}
+
+#block2:hover{
+  -webkit-transform:scale(1.3);
+transform:scale(1.3);
+}
+
+#block3:hover{
+  -webkit-transform:scale(1.3);
+transform:scale(1.3);
+}
+
+#block4:hover{
+  -webkit-transform:scale(1.3);
+transform:scale(1.3);
+}
+
+#block5:hover{
+  -webkit-transform:scale(1.3);
+transform:scale(1.3);
+}
 /*-------------------------------------------------------------------------------------------------- */
 .Main { 
   grid-area: Main; 
