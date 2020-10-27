@@ -15,29 +15,46 @@
     <audio id="run" src="audio/run-code.m4a" type="audio/m4a"></audio>
     <audio id="swipe-right" src="audio/swipe-right.m4a" type="audio/m4a"></audio>
     <audio id="swipe-up" src="audio/swipe-up.m4a" type="audio/m4a"></audio>
+    <audio id="forward" src="audio/forward.m4a" type="audio/m4a"></audio>
     <audio id="help" src="audio/code-bot.m4a" type="audio/m4a"></audio>
     <audio id="rock" src="audio/rock.wav" type="audio/wav"></audio>
     <audio id="wind" src="audio/windhowl.wav" type="audio/wav"></audio>
     <audio id="gem" src="audio/gem.wav" type="audio/wav"></audio>
     <audio id="collect" src="audio/collect.wav" type="audio/wav"></audio>
     <audio id="toggle" src="audio/toggle.wav" type="audio/wav"></audio>
+    <audio id="here" src="audio/codebot_here.m4a" type="audio/m4a"></audio>
+    <audio id="listening" src="audio/codebot_listening.m4a" type="audio/m4a"></audio>
+    <audio id="codebot-run" src="audio/winGame.m4a" type="audio/m4a"></audio>
     <body onload="init()"> 
     <div class="grid-container">
         <div class="Nav">
             <!-- <div class="run"><button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Double Tap to Run Your Code</button></div> -->
-        
-            <div class="blocks">
+            <div id="commands">   
                 <div class="help">
-                    <img id="speaker" src="images/speaker.png" onclick="document.getElementById('help').play()" ondblclick="document.getElementById('help').pause()">
+                    <img id="speaker" src="images/speaker.png" onclick="document.getElementById('here').play()" ondblclick="document.getElementById('here').pause()">
                     <img id="siri" src="images/siri.png"><span id="action"><img id="voice" src="images/voice-command.png"><br>By embedding Siri— and training Siri to carry out game actions & to provide player support— the user can control game actions using voice commands (but instead of initiating Siri by saying the phrase "Hey Siri", users will say "Hey Codebot"). <br><br><img id="right" src="images/right.png"><br>The user can also control game actions by swiping.  To add a command to their code, the user swipes that command to the right.  It will make a swooshing noise if the user swipes right correctly.<br><br><img id="left" src="images/left.png"><br>To remove a command from their code, the user swipes that command to the left.  It will make a crumpling noise (the same noise it makes when you move an item on your computer into the trash) if the user swipes left correctly.</span>
                 </div>
-                <div id="block1"><div class="forward"><img id="move-forward" src="images/moveForward().png">moveForward()</div></div>               
-                <div id="block2"><img id="turn-left" src="images/turnLeft().png"><br>turnLeft()</div>
-                <div id="block3"><img id="turn-right" src="images/turnRight().png"><br>turnRight()</div>
-                <div id="block4"><div class="collect"><img id="collect-gem" src="images/collect-gem.png">collectGem()</div></div>
-                <div id="block5"><div class="toggle"><img id="toggle-switch" src="images/toggleSwitch().png">toggleSwitch()</div></div>
-            </div>
+                <div class="blocks">
+                    <div id="block1" ondrop="dropThis(event)" ondragover="allowDropThis(event)">
+                        <img id="move-forward" src="images/func_moveForward().png" draggable="true" ondragstart="dragThis(event)" id="drag1" width="120" height="180">
+                    </div> 
+                    <div id="block2" ondrop="dropThis(event)" ondragover="allowDropThis(event)">
+                        <img id="turn-left" src="images/func_turnLeft().png" draggable="true" ondragstart="dragThis(event)" id="drag1" width="120" height="180">
+                    </div>                        
+                    <!-- <div id="block2"><img id="turn-left" src="images/turnLeft().png"><br>turnLeft()</div> -->
+                    <div id="block3" ondrop="dropThis(event)" ondragover="allowDropThis(event)">
+                        <img id="turn-right" src="images/func_turnRight().png" draggable="true" ondragstart="dragThis(event)" id="drag1" width="120" height="180">
+                    </div> 
+                    <div id="block4" ondrop="dropThis(event)" ondragover="allowDropThis(event)">
+                        <img id="collect-gem" src="images/func_collectGem().png" draggable="true" ondragstart="dragThis(event)" id="drag1" width="120" height="180">
+                    </div> 
+                    <div id="block5" ondrop="dropThis(event)" ondragover="allowDropThis(event)">
+                        <img id="toggle-switch" src="images/func_toggleSwitch().png" draggable="true" ondragstart="dragThis(event)" id="drag1" width="120" height="100">
+                    </div>
+                </div>
+            </div> 
         </div>
+        <!-- </div> -->
         <div class="Main">
             <section class="columns">
                 <div id="column-1">
@@ -89,20 +106,37 @@
         <div class="Header">
             <div class="code-blocks">
                 <div id="run-code">
-                    <button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Run Code!</button><span class="siri">
+                    <button id="run" onclick="document.getElementById('codebot-run').play()" ondblclick="document.getElementById('codebot-run').pause()">Run Code</button><span class="siri">
+                
                     <!-- <div class="swift"><img id=#swift src="images/swift.png"></div> -->
                 </div>
+                <h1>func winGame{ </h1>
                 <!-- <div id="block">
                     <div class="run"><button id="run" onclick="document.getElementById('run').play()" ondblclick="document.getElementById('run').pause()">Double Tap to Run Your Code</button></div>
                 </div> -->
-                <div id="block" onclick="document.getElementById('swipe-right').play()" ondblclick="document.getElementById('swipe-right').pause()"></div>                
+                <div class="drop">
+                    <div id="block" ondrop="dropThis(event)" ondragover="allowDropThis(event)"></div>
+                </div>   
+                <div class="drop">
+                    <div id="block" ondrop="dropThis(event)" ondragover="allowDropThis(event)"></div>
+                </div>  
+                <div class="drop">
+                    <div id="block" ondrop="dropThis(event)" ondragover="allowDropThis(event)"></div>
+                </div>  
+                <div class="drop">
+                    <div id="block" ondrop="dropThis(event)" ondragover="allowDropThis(event)"></div>
+                </div>   
+                <div class="drop">
+                    <div id="block" ondrop="dropThis(event)" ondragover="allowDropThis(event)"></div>
+                </div>              
+                <!-- <div id="block"></div> -->
+                <!-- <div id="block"></div>
                 <div id="block"></div>
-                <div id="block"></div>
-                <div id="block"></div>
-                <div id="block"></div>
+                <div id="block"></div> -->
                 <!-- <div id="block"></div> -->
                 <!-- <div id="block"></div>
                 <div id="block"></div> -->
+                <h2>}<br>winGame()</h2>
             </div>
             <!-- <div class="commands">
                 <div id="command1"><img id="forward" src="images/moveForward.png" onclick="document.getElementById('swipe-up').play()" ondblclick="document.getElementById('swipe-up').pause()" ondblclick="document.getElementById('swipe-right').pause()"></div>

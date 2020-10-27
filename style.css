@@ -43,12 +43,20 @@ html, body, .grid-container { height: 100%; margin: 0; }
   display:block;
 
 }
+#commands{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
 .blocks{
   display: flex;
   justify-content: center;
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  margin-top:37px;
   /* margin-top:60px; */
 }
 
@@ -65,8 +73,8 @@ html, body, .grid-container { height: 100%; margin: 0; }
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  height: 110px;
-  width:150px;
+  height: 100px;
+  width:140px;
   border: 2px solid black;
   padding:10px;
   margin:10px;
@@ -80,8 +88,8 @@ html, body, .grid-container { height: 100%; margin: 0; }
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  height: 110px;
-  width:150px;
+  height: 100px;
+  width:140px;
   border: 2px solid black;
   padding:10px;
   margin:10px;
@@ -95,8 +103,8 @@ html, body, .grid-container { height: 100%; margin: 0; }
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  height: 110px;
-  width:150px;
+  height: 100px;
+  width:140px;
   border: 2px solid black;
   padding:10px;
   margin:10px;
@@ -110,8 +118,8 @@ html, body, .grid-container { height: 100%; margin: 0; }
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  height: 110px;
-  width:150px;
+  height: 100px;
+  width:140px;
   border: 2px solid black;
   padding:10px;
   margin:10px;
@@ -125,8 +133,8 @@ html, body, .grid-container { height: 100%; margin: 0; }
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  height: 110px;
-  width:150px;
+  height: 100px;
+  width:140px;
   border: 2px solid black;
   padding:10px;
   margin:10px;
@@ -135,11 +143,48 @@ html, body, .grid-container { height: 100%; margin: 0; }
   text-align: center;
   background-color:aqua;
 }
-#move-forward{
-  width:90px;
+#block_sounds{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  height: 60px;
+  width:80px;
+  border: 2px solid black;
+  font-family: 'Trispace', sans-serif;
+  font-size:9 pt;
+  color: black;
+  text-align: center;
 }
+#move-forward{
+  width:120px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+#turn-left{
+  width:120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#turn-right{
+  width:120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #collect-gem{
-  width:90px;
+  width:120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#toggle-switch{
+  width:120px;
+  height:100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #block1:hover{
@@ -346,10 +391,12 @@ canvas.shake {
   float: right;
   height:50px;
   margin-right:5px;
-  margin-top:5px;
-  margin-bottom: 5px;
+  /* margin-top:5px; */
+  /* margin-bottom: 5px; */
   border-radius: 50%;
-  padding:7px;
+  /* padding:7px; */
+  font-family: 'Trispace', sans-serif;
+  font-size:12pt;
   /* display:flex;
   justify-content: center;
   justify-items: center; */
@@ -368,13 +415,17 @@ canvas.shake {
   margin-top:20px;
   /* margin-top:60px; */
 }
+#drop{
+  height: 100px;
+  width:140px;
+}
 #block{
   display:flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  height: 110px;
-  width:150px;
+  height: 100px;
+  width:140px;
   border: 2px solid black;
   padding:10px;
   margin:10px;
@@ -383,6 +434,29 @@ canvas.shake {
   text-align: center;
   overflow-y: scroll;
 }
+h1{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  font-family: 'Trispace', sans-serif;
+  color: black;
+  text-align: center;
+  font-size:16pt;
+  margin-bottom:2px;
+}
+h2{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  font-family: 'Trispace', sans-serif;
+  color: black;
+  text-align: center;
+  font-size:16pt;
+  margin-top: -5px;
+}
+
 
 /*-------------------------------------------------------------------------------------------------- */
 
